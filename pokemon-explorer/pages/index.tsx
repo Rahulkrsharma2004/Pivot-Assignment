@@ -1,15 +1,47 @@
-import React from 'react';
-import PokedexGrid from '../components/PokedexGrid';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import React, { useState, useEffect } from "react";
+import PokedexGrid from "../components/PokedexGrid";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { FaArrowUp } from "react-icons/fa";
+import Navbar from "@/components/Navbar";
 
 const queryClient = new QueryClient();
 
 const Home: React.FC = () => {
+  const [showScroll, setShowScroll] = useState(false);
+
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 400) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 400) {
+      setShowScroll(false);
+    }
+  };
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkScrollTop);
+    return () => {
+      window.removeEventListener("scroll", checkScrollTop);
+    };
+  }, [showScroll]);
+
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4">Pokemon Explorer</h1>
+      <Navbar />
+      <div className="container mx-auto p-2 relative">
         <PokedexGrid />
+        <button
+          onClick={scrollTop}
+          className={`fixed bottom-10 right-10 bg-yellow-500 text-white p-3 rounded-full shadow-2xl transition-opacity duration-300 ${
+            showScroll ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ display: showScroll ? "inline" : "none" }}
+        >
+          <FaArrowUp size={24} />
+        </button>
       </div>
     </QueryClientProvider>
   );
