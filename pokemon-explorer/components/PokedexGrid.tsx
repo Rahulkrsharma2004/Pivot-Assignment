@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { usePokemon } from "../hooks/usePokemon";
 import PokemonCard from "./PokemonCard";
-import '../styles/globals.css'
+import "../styles/globals.css";
 import { useInView } from "react-intersection-observer";
 
 const PokedexGrid: React.FC = () => {
@@ -15,7 +15,8 @@ const PokedexGrid: React.FC = () => {
   const { ref, inView } = useInView({
     threshold: 0.1,
   });
-
+  console.log(page);
+  console.log(inView);
   useEffect(() => {
     setPage(1);
   }, [searchTerm, sortOption, filterType]);
