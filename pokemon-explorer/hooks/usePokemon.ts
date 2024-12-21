@@ -6,12 +6,21 @@ import { Pokemon, PokemonApiResponse } from '../utils/types';
 
 const fetchPokemon = async (): Promise<Pokemon[]> => {
   const response = await axios.get<PokemonApiResponse>('https://pokeapi.co/api/v2/pokemon?limit=151');
-  return response.data.results.map((pokemon, index) => ({
-    id: index + 1,
-    name: pokemon.name,
-    types: [], // You can add logic to fetch types if needed
-    sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
-  }));
+  const pokemonList = response.data.results;
+
+  const pokemonWithTypes = await Promise.all(
+    pokemonList.map(async (pokemon, index) => {
+      const pokemonDetails = await axios.get(pokemon.url);
+      return {
+        id: index + 1,
+        name: pokemon.name,
+        types: pokemonDetails.data.types.map((typeInfo: any) => typeInfo.type.name),
+        sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
+      };
+    })
+  );
+
+  return pokemonWithTypes;
 };
 
 export const usePokemon = () => {
