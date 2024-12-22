@@ -11,11 +11,7 @@ The Pokemon Web Application is designed to showcase frontend development skills 
 - Next.js
 - TypeScript
 - Tailwind CSS
-
-### Optional/Preferred Backend
-- Node.js + Express
-- MongoDB (Nice to have, but not mandatory)
-- Can use Pokemon API or static constants if backend is challenging
+- Pokemon API
 
 ## Project Challenges
 
