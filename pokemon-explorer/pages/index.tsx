@@ -31,7 +31,7 @@ const Home: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Navbar />
-      <div className="container mx-auto p-2 relative">
+      <div className="mx-auto p-2 relative">
         <PokedexGrid />
         <button
           onClick={scrollTop}

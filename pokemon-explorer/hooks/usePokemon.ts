@@ -1,5 +1,3 @@
-// hooks/usePokemon.ts
-
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Pokemon, PokemonApiResponse } from '../utils/types';

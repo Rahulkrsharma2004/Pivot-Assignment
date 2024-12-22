@@ -72,8 +72,8 @@ const PokedexGrid: React.FC = () => {
   });
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-screen-2xl">
-      <div className="flex flex-col sm:flex-row sm:justify-between mb-4 space-y-4 sm:space-y-0">
+    <div className="mx-auto px-4  max-w-screen-2xl">
+      <div className="flex flex-col sm:flex-row sm:justify-between px-4 space-y-4 sm:space-y-0">
         <input
           type="text"
           placeholder="Search by name"

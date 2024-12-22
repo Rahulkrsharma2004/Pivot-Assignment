@@ -1,4 +1,3 @@
-// import Image from 'next/image';
 import React from 'react';
 
 interface PokemonCardProps {
@@ -16,7 +15,6 @@ const typeColors: { [key: string]: string } = {
   flying: 'bg-gray-200',
   electric: 'bg-yellow-200',
   bug: 'bg-lime-200',
-  // Add other types as needed
 };
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ id, name, types, sprite }) => {
