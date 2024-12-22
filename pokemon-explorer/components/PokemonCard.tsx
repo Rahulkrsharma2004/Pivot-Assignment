@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { PinContainer } from "./ui/3d-pin"; // Adjust the import path as needed
+import { PinContainer } from "./ui/3d-pin"; 
 
 interface PokemonCardProps {
   id: number;
@@ -20,7 +20,7 @@ const typeColors: { [key: string]: string } = {
 };
 
 const PokemonCard: React.FC<PokemonCardProps> = ({
-  id,
+  // id,
   name,
   types,
   sprite,
