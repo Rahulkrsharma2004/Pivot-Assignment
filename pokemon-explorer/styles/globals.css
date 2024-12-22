@@ -11,7 +11,7 @@
     min-height: 100vh;
   } */
   .custom-placeholder::placeholder {
-    color: #080808;
+    color: #171717;
     opacity: 1;
   }
   

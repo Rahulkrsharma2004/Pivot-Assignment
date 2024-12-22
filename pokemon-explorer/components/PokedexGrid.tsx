@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { usePokemon } from "../hooks/usePokemon";
 import PokemonCard from "./PokemonCard";
-import "../styles/globals.css";
+// import "../styles/globals.css";
 import { useInView } from "react-intersection-observer";
 
 const PokedexGrid: React.FC = () => {
