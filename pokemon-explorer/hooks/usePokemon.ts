@@ -9,6 +9,7 @@ const fetchPokemon = async (): Promise<Pokemon[]> => {
   const pokemonWithTypes = await Promise.all(
     pokemonList.map(async (pokemon, index) => {
       const pokemonDetails = await axios.get(pokemon.url);
+      console.log("pokemonDetails", pokemonDetails);
       return {
         id: index + 1,
         name: pokemon.name,

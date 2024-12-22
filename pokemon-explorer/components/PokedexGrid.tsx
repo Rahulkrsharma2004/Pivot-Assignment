@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { usePokemon } from "../hooks/usePokemon";
 import PokemonCard from "./PokemonCard";
-// import "../styles/globals.css";
 import { useInView } from "react-intersection-observer";
 
 const PokedexGrid: React.FC = () => {
@@ -107,7 +106,7 @@ const PokedexGrid: React.FC = () => {
           <option value="bug">Bug</option>
         </select>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5  gap-6 p-4">
         {sortedPokemon &&
           sortedPokemon.map((pokemon) => (
             <PokemonCard
@@ -117,6 +116,7 @@ const PokedexGrid: React.FC = () => {
               types={pokemon.types}
               sprite={pokemon.sprite}
             />
+            // <ThreeDCardDemo/>
           ))}
       </div>
       <div ref={ref} className="mt-8">

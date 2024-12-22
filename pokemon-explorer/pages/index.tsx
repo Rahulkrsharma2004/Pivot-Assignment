@@ -31,18 +31,18 @@ const Home: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Navbar />
-      <div className="mx-auto p-2 relative">
+      {/* <div className="mx-auto p-2 relative"> */}
         <PokedexGrid />
         <button
           onClick={scrollTop}
-          className={`fixed bottom-10 right-10 bg-yellow-500 text-white p-3 rounded-full shadow-2xl transition-opacity duration-300 ${
+          className={`fixed bottom-10 right-10 z-50 bg-pink-500 text-white p-3 rounded-full shadow-2xl transition-opacity duration-300 ${
             showScroll ? "opacity-100" : "opacity-0"
           }`}
           style={{ display: showScroll ? "inline" : "none" }}
         >
           <FaArrowUp size={24} />
         </button>
-      </div>
+      {/* </div> */}
     </QueryClientProvider>
   );
 };
