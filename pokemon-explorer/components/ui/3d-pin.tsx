@@ -31,7 +31,7 @@ export const PinContainer = ({
   return (
     <Link
       className={cn(
-        "relative group/pin z-50 cursor-pointer overflow-hidden", 
+        "relative  z-50 cursor-pointer overflow-hidden", 
         containerClassName
       )}
       onMouseEnter={onMouseEnter}
